@@ -10,11 +10,17 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
+    @IBOutlet weak var diceOne: UIImageView!
+    @IBOutlet weak var diceTwo: UIImageView!
+    
+    //Create array of die images for rolling
+    let die = [#imageLiteral(resourceName: "DiceOne"), #imageLiteral(resourceName: "DiceTwo"), #imageLiteral(resourceName: "DiceThree"), #imageLiteral(resourceName: "DiceFour"), #imageLiteral(resourceName: "DiceFive"), #imageLiteral(resourceName: "DiceSix")]
+    
+    @IBAction func rollButtonPressed(_ sender: UIButton) {
+        // Selects a random dice image for each die when pressed
+        diceOne.image = die[Int.random(in: 0...5)]
+        diceTwo.image = die[Int.random(in: 0...5)]
     }
-
-
+    
 }
 
